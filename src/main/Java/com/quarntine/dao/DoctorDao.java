@@ -39,7 +39,7 @@ public class DoctorDao {
 	        return doctor;
 	    }
 	 
-	    public  void deleteDoctor(String Name) {
+	    public static void deleteDoctor(String Name) {
 	    	doctormap.remove(Name);
 	    }
 	 

@@ -1,4 +1,5 @@
-package com.quarntine.restjson;
+package com.quarntine.service;
+/*package com.quarntine.restjson;
 
 
 import javax.ws.rs.Consumes;
@@ -41,3 +42,4 @@ public class JsonService {
 	
 }
 
+*/
