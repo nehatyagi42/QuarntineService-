@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.resource.code</groupId>
-  <artifactId>QuarntineRESTWithJSON</artifactId>
+  <artifactId>QuarntineService</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>QuarntineRESTWithJSON Maven Webapp</name>
+  <name>QuarntineService Maven Webapp</name>
   <url>http://maven.apache.org</url>
   
    <repositories>
@@ -46,8 +46,42 @@
     <version>1.17.1</version>
 </dependency>
   
-	  
+	   <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
+    <scope>provided</scope>
+</dependency>
   
+  <!-- https://mvnrepository.com/artifact/asm/asm -->
+<dependency>
+    <groupId>asm</groupId>
+    <artifactId>asm</artifactId>
+    <version>3.3.1</version>
+</dependency>
+  <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-bundle -->
+<dependency>
+    <groupId>com.sun.jersey</groupId>
+    <artifactId>jersey-bundle</artifactId>
+    <version>1.17.1</version>
+</dependency>
+  <!-- https://mvnrepository.com/artifact/org.json/json -->
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20190722</version>
+</dependency>
+      <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+
+
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -56,7 +90,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>QuarntineRESTWithJSON</finalName>
+    <finalName>QuarntineService</finalName>
     <plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>

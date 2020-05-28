@@ -10,7 +10,7 @@
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 		<init-param>
 		     <param-name>com.sun.jersey.config.property.packages</param-name>
-		     <param-value>com.quarntine.restjson</param-value>
+		     <param-value>com.quarntine.service</param-value>
 		</init-param>
 		
 	<!--In web.xml, declares “com.sun.jersey.api.json.POJOMappingFeature” 
