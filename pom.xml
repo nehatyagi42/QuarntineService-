@@ -1,14 +1,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.resource.code</groupId>
-  <artifactId>QuarntineService</artifactId>
-  <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>QuarntineService Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  
-   <repositories>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.resource.code</groupId>
+	<artifactId>QuarntineService</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>QuarntineService Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+
+<properties>
+        <jersey.version>2.27</jersey.version>
+		 <spring.version>4.3.5.RELEASE</spring.version>
+        <hibernate.version>5.5.6.Final</hibernate.version>
+		<jersey.scope>compile</jersey.scope>
+		<compileSource>1.8</compileSource>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<repositories>
 		<repository>
 			<id>maven2-repository.java.net</id>
 			<name>Java.net Repository for Maven</name>
@@ -16,91 +28,162 @@
 			<layout>default</layout>
 		</repository>
 	</repositories>
+
+
+         
+
+
+	<dependencies>
+		<!-- Jersey core Servlet 2.x implementation -->
+		<dependency>
+			<groupId>org.glassfish.jersey.containers</groupId>
+			<artifactId>jersey-container-servlet</artifactId>
+			<version>${jersey.version}</version>
+			<scope>${jersey.scope}</scope>
+		</dependency>
+
+
+        <dependency>
+   <groupId>org.glassfish.jersey.core</groupId>
+   <artifactId>jersey-server</artifactId>
+   <version>${jersey.version}</version>
+  </dependency>
+
+	 <!-- https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-moxy -->
+  <dependency>
+   <groupId>org.glassfish.jersey.media</groupId>
+   <artifactId>jersey-media-moxy</artifactId>
+   <version>${jersey.version}</version>
+  </dependency>
   
- 
-  <dependencies>
   
+<dependency>
+            <groupId>org.glassfish.jersey.ext</groupId>
+            <artifactId>jersey-spring4</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        
+         <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context-support</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+     <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+        
+<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+            <scope>compile</scope>
+        </dependency>
+		  <!-- Spring 3 dependencies -->
+  <dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-core</artifactId>
+   <version>${spring.version}</version>
+</dependency>
 
  <dependency>
-        <groupId>com.sun.jersey</groupId>
-        <artifactId>jersey-server</artifactId>
-        <version>1.17.1</version>
+  <groupId>org.springframework</groupId>
+   <artifactId>spring-tx</artifactId>
+    <version>${spring.version}</version>
+   </dependency>
+
+ <dependency>
+  <groupId>org.springframework</groupId>
+  <artifactId>spring-orm</artifactId>
+ <version>${spring.version}</version>
+ </dependency>
+
+  <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-test</artifactId>
+        <version>${spring.version}</version>
     </dependency>
-    
-    <dependency>
-        <groupId>com.sun.jersey</groupId>
-        <artifactId>jersey-core</artifactId>
-        <version>1.17.1</version>
-    </dependency>
-    
-    <dependency>
-        <groupId>com.sun.jersey</groupId>
-        <artifactId>jersey-servlet</artifactId>
-        <version>1.17.1</version>
-    </dependency>
-  
-  <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-json -->
+		
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+			<exclusions>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>servlet-api</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+         <!-- MySQL database driver -->
+	<dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>5.1.9</version>
+	</dependency>
+
+
+<!-- Hibernate dependency -->
+
+
+
 <dependency>
-    <groupId>com.sun.jersey</groupId>
-    <artifactId>jersey-json</artifactId>
-    <version>1.17.1</version>
-</dependency>
-  
-	   <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>servlet-api</artifactId>
-    <version>2.5</version>
-    <scope>provided</scope>
-</dependency>
-  
-  <!-- https://mvnrepository.com/artifact/asm/asm -->
-<dependency>
-    <groupId>asm</groupId>
-    <artifactId>asm</artifactId>
-    <version>3.3.1</version>
-</dependency>
-  <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-bundle -->
-<dependency>
-    <groupId>com.sun.jersey</groupId>
-    <artifactId>jersey-bundle</artifactId>
-    <version>1.17.1</version>
-</dependency>
-  <!-- https://mvnrepository.com/artifact/org.json/json -->
-<dependency>
-    <groupId>org.json</groupId>
-    <artifactId>json</artifactId>
-    <version>20190722</version>
-</dependency>
-      <!-- https://mvnrepository.com/artifact/org.codehaus.jackson/jackson-mapper-asl -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-mapper-asl</artifactId>
-            <version>1.9.13</version>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-search-orm</artifactId>
+            <version>${hibernate.version}</version>
         </dependency>
 
 
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		
+	</dependencies>
 
-
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <build>
-    <finalName>QuarntineService</finalName>
-    <plugins>
+	<build>
+		<finalName>QuarntineService</finalName>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<includes>
+					<include>**/*.*</include>
+				</includes>
+			</resource>
+		</resources>
+		<plugins>
+			<!-- Eclipse project -->
 			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<version>2.9</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<!-- Always download and attach dependencies source code -->
+					<downloadSources>true</downloadSources>
+					<downloadJavadocs>false</downloadJavadocs>
+					<!-- Avoid type mvn eclipse:eclipse -Dwtpversion=2.0 -->
+					<wtpversion>2.0</wtpversion>
+					<wtpContextName>QuarntineService</wtpContextName>
 				</configuration>
 			</plugin>
+			<!-- <plugin> <artifactId>maven-compiler-plugin</artifactId> <configuration> 
+				<source>1.8</source> <target>1.8</target> </configuration> </plugin> -->
+
 		</plugins>
-    
-    
-  </build>
+	</build>
 </project>
