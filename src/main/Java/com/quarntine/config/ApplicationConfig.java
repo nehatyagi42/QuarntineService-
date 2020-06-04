@@ -13,11 +13,11 @@ public class ApplicationConfig extends ResourceConfig {
 
 	
 	public ApplicationConfig() {
-	/*	register(DoctorService.class);
+	register(DoctorService.class);
 		register(Doctor.class);
 		register(DoctorDao.class);
 		register(DoctorDaoImpl.class);
-		register(DoctorServiceImpl.class);*/
+		register(DoctorServiceImpl.class);
 		register(DoctorResource.class);
 		register(MyResource.class);
 	}

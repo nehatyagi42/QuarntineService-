@@ -40,7 +40,7 @@
      
       <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
     <bean id="doctorServiceobj" class="com.quarntine.service.DoctorServiceImpl"/>
-    <bean id="doctorDaoObj" class="com.quarntine.dao.impl.DoctorDaoImpl"/>
+    <bean id="doctorDaoObj" class="com.quarntine.dao.DoctorDaoImpl"/>
      
      
 </beans>
