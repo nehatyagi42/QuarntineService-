@@ -2,7 +2,7 @@ package com.quarntine.config;
 
 import java.util.List;
 
-import javax.ws.rs.Consumes;
+
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -51,7 +51,6 @@ public class DoctorResource {
 	@Path("/{id}")
 	public Doctor removeDoctor(@PathParam("id") int id) {
 		return doctorServiceobj.deleteDoctor(id);
-
 	}
 
 }
