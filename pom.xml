@@ -11,7 +11,7 @@
 
 <properties>
         <jersey.version>2.27</jersey.version>
-		 <spring.version>4.3.5.RELEASE</spring.version>
+		 <spring.version>5.3.18</spring.version>
         <hibernate.version>5.5.6.Final</hibernate.version>
 		<jersey.scope>compile</jersey.scope>
 		<compileSource>1.8</compileSource>
